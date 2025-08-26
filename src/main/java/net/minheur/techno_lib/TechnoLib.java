@@ -31,6 +31,7 @@ public class TechnoLib {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        System.out.println("TechnoLib is starting !");
     }
 
     // Add the example block item to the building blocks tab
