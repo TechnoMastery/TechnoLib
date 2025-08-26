@@ -14,6 +14,9 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
  * Helper class to build a criterion
  */
 public class CriterionBuilder {
+    /**
+     * The json where the criterion is stored. The properties are written in slowly
+     */
     private final JsonObject criterion = new JsonObject();
 
     public CriterionBuilder(ResourceLocation trigger) {

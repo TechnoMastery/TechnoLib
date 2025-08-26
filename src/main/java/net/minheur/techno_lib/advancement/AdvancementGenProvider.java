@@ -13,9 +13,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * The provider for advancement generating.
+ */
 public abstract class AdvancementGenProvider implements DataProvider {
+    /**
+     * Used to write the output
+     */
     private final PackOutput output;
+    /**
+     * The ID of the mod extending this
+     */
     private final String modid;
+    /**
+     * The {@link Map} of advancements
+     */
     private final Map<ResourceLocation, JsonObject> advancements = new HashMap<>();
 
     protected AdvancementGenProvider(PackOutput output, String modid) {
@@ -23,6 +35,9 @@ public abstract class AdvancementGenProvider implements DataProvider {
         this.modid = modid;
     }
 
+    /**
+     * The method to extends in subclasses to register advancements
+     */
     protected abstract void addAdvancement();
 
     /**
