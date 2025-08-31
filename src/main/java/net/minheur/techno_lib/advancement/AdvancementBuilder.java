@@ -79,7 +79,7 @@ public class AdvancementBuilder {
 
     /**
      * Adds a criterion for your advancement
-     * @param name the name of your criterion. Should be set in {@link #requiement} strategy.
+     * @param name the name of your criterion. Should be set in {@link #requirements} strategy.
      * @param trigger the trigger of your criterion as a {@link JsonObject}. Consider using {@link CriterionBuilder} for easier criterion.
      * @return the building advancement
      */

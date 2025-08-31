@@ -105,6 +105,12 @@ public abstract class LanguageGenProvider implements DataProvider {
     public TranslationBuilder add(@NotNull Item key) {
         return add(key.getDescriptionId());
     }
+    public TranslationBuilder addRecordDesc(@NotNull Supplier<? extends Item> key) {
+        return addDesc(key.get());
+    }
+    public TranslationBuilder addDesc(@NotNull Item key) {
+        return add(key.getDescriptionId() + ".desc");
+    }
     public TranslationBuilder addItemStack(@NotNull Supplier<ItemStack> key) {
         return add(key.get());
     }
