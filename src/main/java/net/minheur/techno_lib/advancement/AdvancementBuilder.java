@@ -14,10 +14,25 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
  * Custom builder for advancements
  */
 public class AdvancementBuilder {
+    /**
+     * The id of your advancement (ex. {@code smelt_iron})
+     */
     private final String id;
+    /**
+     * The group of your advancement (ex. {@code story})
+     */
     private final String group;
+    /**
+     * Set if the advancement is a root or not
+     */
     private final boolean isRoot;
+    /**
+     * The json of your advancement. The properties are added to it progressively.
+     */
     private final JsonObject json = new JsonObject();
+    /**
+     * The ID of the mod using this class. Used in ids
+     */
     private final String modid;
 
     public AdvancementBuilder(String id, String group, boolean isRoot, String modid) {
