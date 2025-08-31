@@ -140,9 +140,19 @@ public abstract class LanguageGenProvider implements DataProvider {
     public TranslationBuilder add(@NotNull Item key) {
         return add(key.getDescriptionId());
     }
+    /**
+     * Create a disc description translation builder from the extended {@link Item} you gave.
+     * @param key the extended {@link Item}
+     * @return a builder for disc desc
+     */
     public TranslationBuilder addRecordDesc(@NotNull Supplier<? extends Item> key) {
         return addDesc(key.get());
     }
+    /**
+     * Create a disc description translation builder from the {@link Item} you gave
+     * @param key the {@link Item}
+     * @return a builder for disc description
+     */
     public TranslationBuilder addDesc(@NotNull Item key) {
         return add(key.getDescriptionId() + ".desc");
     }
