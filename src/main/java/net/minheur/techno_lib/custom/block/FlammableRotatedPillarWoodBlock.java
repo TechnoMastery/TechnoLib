@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FlammableRotatedPillarWoodBlock extends FlammableRotatedPillarBlock{
+public class FlammableRotatedPillarWoodBlock extends FlammableRotatedPillarBlock {
     public static Map<Block, BlockState> states = new HashMap<>();
 
     public FlammableRotatedPillarWoodBlock(Properties pProperties, BlockState pStrippedState) {
