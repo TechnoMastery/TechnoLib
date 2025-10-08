@@ -2,14 +2,13 @@ package net.minheur.techno_lib.custom.recipe;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public abstract class AbstractIngredientRecipe extends AbstractBaseRecipe {
+public abstract class AbstractIngredientRecipe extends AbstractRecipe {
     protected final NonNullList<Ingredient> ingredients;
 
-    protected AbstractIngredientRecipe(ItemStack output, ResourceLocation id, NonNullList<Ingredient> ingredients) {
-        super(output, id);
+    protected AbstractIngredientRecipe(ResourceLocation id, NonNullList<Ingredient> ingredients) {
+        super(id);
         this.ingredients = ingredients;
     }
 
