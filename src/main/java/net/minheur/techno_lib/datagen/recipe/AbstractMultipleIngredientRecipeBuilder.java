@@ -11,8 +11,8 @@ import java.util.List;
 public abstract class AbstractMultipleIngredientRecipeBuilder extends AbstractResultRecipeBuilder {
     protected final List<Ingredient> ingredients = new ArrayList<>();
 
-    public AbstractMultipleIngredientRecipeBuilder(String recipeName, ItemLike result, int count) {
-        super(recipeName, result, count);
+    public AbstractMultipleIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+        super(modid, recipeName, result, count);
     }
 
     public AbstractMultipleIngredientRecipeBuilder addIngredient(ItemLike itemLike) {

@@ -13,8 +13,8 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 public abstract class AbstractMultipleJsonIngredientRecipeBuilder extends AbstractResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
-    public AbstractMultipleJsonIngredientRecipeBuilder(String recipeName, ItemLike result, int count) {
-        super(recipeName, result, count);
+    public AbstractMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+        super(modid, recipeName, result, count);
     }
 
     public AbstractMultipleJsonIngredientRecipeBuilder addIngredient(ItemLike itemLike) {

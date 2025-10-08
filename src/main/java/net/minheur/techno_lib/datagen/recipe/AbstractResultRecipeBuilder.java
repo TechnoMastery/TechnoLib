@@ -8,8 +8,8 @@ public abstract class AbstractResultRecipeBuilder extends AbstractRecipeBuilder 
     protected final ItemLike result;
     protected final int count;
 
-    public AbstractResultRecipeBuilder(String recipeName, ItemLike result, int count) {
-        super(recipeName);
+    public AbstractResultRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+        super(modid, recipeName);
         this.result = result;
         this.count = count;
     }

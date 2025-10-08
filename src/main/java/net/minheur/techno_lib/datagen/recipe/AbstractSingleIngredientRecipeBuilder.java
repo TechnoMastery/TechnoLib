@@ -8,8 +8,8 @@ import net.minecraft.world.level.ItemLike;
 public abstract class AbstractSingleIngredientRecipeBuilder extends AbstractResultRecipeBuilder {
     protected final Ingredient ingredient;
 
-    public AbstractSingleIngredientRecipeBuilder(String recipeName, ItemLike result, int count, Ingredient ingredient) {
-        super(recipeName, result, count);
+    public AbstractSingleIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count, Ingredient ingredient) {
+        super(modid, recipeName, result, count);
         this.ingredient = ingredient;
     }
 

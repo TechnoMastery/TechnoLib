@@ -14,10 +14,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Consumer;
 
 public abstract class AbstractRecipeBuilder {
+    protected final String modid;
     protected final String recipeName;
     protected final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
-    public AbstractRecipeBuilder(String recipeName) {
+    public AbstractRecipeBuilder(String modid, String recipeName) {
+        this.modid = modid;
         if (recipeName.toLowerCase().replaceAll("\\s+", "").isEmpty()) throw new IllegalArgumentException("This name isn't valid !");
         this.recipeName = recipeName;
     }
@@ -43,7 +45,10 @@ public abstract class AbstractRecipeBuilder {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        saveRecipeResult(consumer, id.withPrefix(recipeName + "/"), this.advancement, id.withPrefix("recipes/" + recipeName + "/"));
+        saveRecipeResult(consumer, id);
+    }
+    public void save(Consumer<FinishedRecipe> consumer, String id) {
+        save(consumer, new ResourceLocation(modid, id));
     }
 
     /**
@@ -52,7 +57,7 @@ public abstract class AbstractRecipeBuilder {
      * <p> Replace {@code [...]} with your data (ex. ingredient...)
      * <p> /!\ There can also be some AFTER {@code advancementPath} !
      */
-    protected abstract void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation recipePath, Advancement.Builder advancement, ResourceLocation advancementPath);
+    protected abstract void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation id);
 
     public static abstract class BaseResult implements FinishedRecipe {
         protected final ResourceLocation id;
