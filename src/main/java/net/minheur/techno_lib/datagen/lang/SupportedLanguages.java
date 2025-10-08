@@ -1,4 +1,4 @@
-package net.minheur.techno_lib.lang;
+package net.minheur.techno_lib.datagen.lang;
 
 /**
  * The list of languages supported by the mod

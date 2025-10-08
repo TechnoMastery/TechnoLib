@@ -1,4 +1,4 @@
-package net.minheur.techno_lib.advancement;
+package net.minheur.techno_lib.datagen.advancement;
 
 import com.google.gson.JsonObject;
 import net.minecraft.data.CachedOutput;

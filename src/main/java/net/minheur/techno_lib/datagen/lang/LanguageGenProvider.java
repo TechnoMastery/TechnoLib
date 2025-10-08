@@ -1,4 +1,4 @@
-package net.minheur.techno_lib.lang;
+package net.minheur.techno_lib.datagen.lang;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
@@ -12,7 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
-import net.minheur.techno_lib.advancement.AdvancementBuilder;
+import net.minheur.techno_lib.datagen.advancement.AdvancementBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Path;
