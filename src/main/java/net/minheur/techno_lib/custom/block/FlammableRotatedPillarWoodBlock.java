@@ -17,6 +17,9 @@ public class FlammableRotatedPillarWoodBlock extends FlammableRotatedPillarBlock
         super(pProperties, 5, 5);
         states.put(this, pStrippedState);
     }
+    public FlammableRotatedPillarWoodBlock(Properties pProperties) {
+        super(pProperties, 5, 5);
+    }
 
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
