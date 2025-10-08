@@ -27,13 +27,9 @@ public abstract class AbstractMenuBlockEntity extends BlockEntity implements Men
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    protected final ContainerData data;
-
-    public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount, ContainerData data) {
+    public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount) {
         super(pType, pPos, pBlockState);
         this.itemHandler = new ItemStackHandler(slotAmount);
-
-        this.data = data;
     }
 
     @Override
@@ -88,7 +84,5 @@ public abstract class AbstractMenuBlockEntity extends BlockEntity implements Men
 
     public abstract void tick(Level pLevel, BlockPos pPos, BlockState pState);
 
-    public ContainerData getData() {
-        return data;
-    }
+    public abstract ContainerData getData();
 }

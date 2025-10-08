@@ -19,15 +19,15 @@ public abstract class AbstractMenuEnergyBlockEntity extends AbstractMenuBlockEnt
     public final SimpleEnergyStorage energyStorage;
     private LazyOptional<IEnergyStorage> energyCap;
 
-    public AbstractMenuEnergyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount, ContainerData data,
+    public AbstractMenuEnergyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount,
                                          int capacity, int maxInputPerTick, int maxOutputPerTick) {
-        super(pType, pPos, pBlockState, slotAmount, data);
+        super(pType, pPos, pBlockState, slotAmount);
         this.energyStorage = new SimpleEnergyStorage(capacity, maxInputPerTick, maxOutputPerTick, this::onEnergyChange);
         this.energyCap = LazyOptional.of(() -> energyStorage);
     }
 
     public AbstractMenuEnergyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount, ContainerData data, int capacity) {
-        this(pType, pPos, pBlockState, slotAmount, data, capacity, capacity, capacity);
+        this(pType, pPos, pBlockState, slotAmount, capacity, capacity, capacity);
     }
 
     @Override
