@@ -17,7 +17,7 @@ public abstract class AbstractResultRecipeBuilder extends AbstractRecipeBuilder 
     @Override
     protected boolean isRecipeEmpty() {
         return super.isRecipeEmpty() ||
-                result == null || count > 0;
+                result == null || count <= 0;
     }
 
     public static abstract class ResultRecipeResult extends BaseResult {
