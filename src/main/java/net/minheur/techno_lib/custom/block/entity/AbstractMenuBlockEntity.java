@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class AbstractMenuBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler;
 
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    protected LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, int slotAmount) {
         super(pType, pPos, pBlockState);
