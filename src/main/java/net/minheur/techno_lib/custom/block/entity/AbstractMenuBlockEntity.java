@@ -31,6 +31,10 @@ public abstract class AbstractMenuBlockEntity extends BlockEntity implements Men
         super(pType, pPos, pBlockState);
         this.itemHandler = new ItemStackHandler(slotAmount);
     }
+public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, ItemStackHandler itemHandler) {
+        super(pType, pPos, pBlockState);
+        this.itemHandler = itemHandler;
+}
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
