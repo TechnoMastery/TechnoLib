@@ -42,6 +42,13 @@ public abstract class AbstractRecipeBuilder {
         return false;
     }
 
+    protected ResourceLocation getFullRecipeId(ResourceLocation id) {
+        return id.withPrefix(this.recipeName + "/");
+    }
+    protected ResourceLocation getFullAdvancementId(ResourceLocation id) {
+        return id.withPrefix("recipes/" + this.recipeName + "/");
+    }
+
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
