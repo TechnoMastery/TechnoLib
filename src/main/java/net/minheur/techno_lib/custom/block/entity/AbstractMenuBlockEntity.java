@@ -19,6 +19,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minheur.techno_lib.builders.DelegatingItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,10 +32,15 @@ public abstract class AbstractMenuBlockEntity extends BlockEntity implements Men
         super(pType, pPos, pBlockState);
         this.itemHandler = new ItemStackHandler(slotAmount);
     }
-public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, ItemStackHandler itemHandler) {
+    public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, ItemStackHandler itemHandler) {
         super(pType, pPos, pBlockState);
         this.itemHandler = itemHandler;
-}
+    }
+    public AbstractMenuBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, DelegatingItemStackHandler itemHandler) {
+        super(pType, pPos, pBlockState);
+        this.itemHandler = itemHandler;
+        ((DelegatingItemStackHandler) this.itemHandler).setOwner(this);
+    }
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
