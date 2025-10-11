@@ -11,6 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minheur.techno_lib.builders.DelegatingItemStackHandler;
 import net.minheur.techno_lib.custom.SimpleEnergyStorage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -27,6 +28,12 @@ public abstract class AbstractMenuEnergyBlockEntity extends AbstractMenuBlockEnt
         this.energyCap = LazyOptional.of(() -> energyStorage);
     }
     public AbstractMenuEnergyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, ItemStackHandler itemHandler,
+                                         int capacity, int maxInputPerTick, int maxOutputPerTick) {
+        super(pType, pPos, pBlockState, itemHandler);
+        this.energyStorage = new SimpleEnergyStorage(capacity, maxInputPerTick, maxOutputPerTick, this::onEnergyChange);
+        this.energyCap = LazyOptional.of(() -> energyStorage);
+    }
+    public AbstractMenuEnergyBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState, DelegatingItemStackHandler itemHandler,
                                          int capacity, int maxInputPerTick, int maxOutputPerTick) {
         super(pType, pPos, pBlockState, itemHandler);
         this.energyStorage = new SimpleEnergyStorage(capacity, maxInputPerTick, maxOutputPerTick, this::onEnergyChange);
