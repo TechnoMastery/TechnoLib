@@ -6,20 +6,20 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.AbstractMultipleJsonResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AMultipleJsonResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
-public abstract class AbstractMultipleJsonRecipeBuilder extends AbstractMultipleJsonResultRecipeBuilder {
+public abstract class AMultipleJsonRecipeBuilder extends AMultipleJsonResultRecipeBuilder {
     /**
      * The List of ingredient items
      */
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
-    public AbstractMultipleJsonRecipeBuilder(String modid, String recipeName) {
+    public AMultipleJsonRecipeBuilder(String modid, String recipeName) {
         super(modid, recipeName);
     }
 
@@ -28,7 +28,7 @@ public abstract class AbstractMultipleJsonRecipeBuilder extends AbstractMultiple
      * @param item the ItemLike you want to add
      * @return the current recipe
      */
-    public AbstractMultipleJsonRecipeBuilder addIngredient(ItemLike item) {
+    public AMultipleJsonRecipeBuilder addIngredient(ItemLike item) {
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", getBuiltInItemRegistry(item));
         ingredients.add(ingredient);
@@ -40,7 +40,7 @@ public abstract class AbstractMultipleJsonRecipeBuilder extends AbstractMultiple
      * @param amount quantity of fluid needed (in mB)
      * @return the current recipe
      */
-    public AbstractMultipleJsonRecipeBuilder addFluidIngredient(String fluid, int amount) {
+    public AMultipleJsonRecipeBuilder addFluidIngredient(String fluid, int amount) {
         JsonObject fluidIngredient = new JsonObject();
         fluidIngredient.addProperty("fluid", fluid);
         fluidIngredient.addProperty("amount", amount);
@@ -53,7 +53,7 @@ public abstract class AbstractMultipleJsonRecipeBuilder extends AbstractMultiple
      * @param tag the tag you want to add
      * @return the current recipe
      */
-    public AbstractMultipleJsonRecipeBuilder addTagIngredient(TagKey<Item> tag) {
+    public AMultipleJsonRecipeBuilder addTagIngredient(TagKey<Item> tag) {
         JsonObject tagIngredient = new JsonObject();
         tagIngredient.addProperty("tag", tag.location().toString());
         ingredients.add(tagIngredient);

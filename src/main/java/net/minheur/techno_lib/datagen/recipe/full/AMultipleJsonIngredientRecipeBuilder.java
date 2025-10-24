@@ -4,21 +4,21 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.AbstractResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
-public abstract class AbstractMultipleJsonIngredientRecipeBuilder extends AbstractResultRecipeBuilder {
+public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
-    public AbstractMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+    public AMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
         super(modid, recipeName, result, count);
     }
 
-    public AbstractMultipleJsonIngredientRecipeBuilder addIngredient(ItemLike itemLike) {
+    public AMultipleJsonIngredientRecipeBuilder addIngredient(ItemLike itemLike) {
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", getBuiltInItemRegistry(itemLike));
         ingredients.add(ingredient);

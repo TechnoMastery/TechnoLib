@@ -5,17 +5,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 
 import com.google.gson.JsonObject;
-import net.minheur.techno_lib.datagen.recipe.AbstractRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
-public abstract class AbstractMultipleJsonResultRecipeBuilder extends AbstractRecipeBuilder {
+public abstract class AMultipleJsonResultRecipeBuilder extends ARecipeBuilder {
     protected final List<JsonObject> results = new ArrayList<>();
 
-    public AbstractMultipleJsonResultRecipeBuilder(String modid, String recipeName) {
+    public AMultipleJsonResultRecipeBuilder(String modid, String recipeName) {
         super(modid, recipeName);
     }
 
@@ -26,7 +26,7 @@ public abstract class AbstractMultipleJsonResultRecipeBuilder extends AbstractRe
      * @param chance the chance of getting the result
      * @return the current recipe
      */
-    public AbstractMultipleJsonResultRecipeBuilder addResult(ItemLike result, int count, float chance) {
+    public AMultipleJsonResultRecipeBuilder addResult(ItemLike result, int count, float chance) {
         JsonObject json = new JsonObject();
         json.addProperty("item", getBuiltInItemRegistry(result));
         if (count > 1) json.addProperty("count", count);
@@ -41,7 +41,7 @@ public abstract class AbstractMultipleJsonResultRecipeBuilder extends AbstractRe
      * @param count the amount you want
      * @return the current recipe
      */
-    public AbstractMultipleJsonResultRecipeBuilder addResult(ItemLike item, int count) {
+    public AMultipleJsonResultRecipeBuilder addResult(ItemLike item, int count) {
         return addResult(item, count, 1f);
     }
     /**
@@ -49,7 +49,7 @@ public abstract class AbstractMultipleJsonResultRecipeBuilder extends AbstractRe
      * @param item the result you want
      * @return the current recipe
      */
-    public AbstractMultipleJsonResultRecipeBuilder addResult(ItemLike item) {
+    public AMultipleJsonResultRecipeBuilder addResult(ItemLike item) {
         return this.addResult(item, 1, 1f);
     }
     /**
@@ -58,7 +58,7 @@ public abstract class AbstractMultipleJsonResultRecipeBuilder extends AbstractRe
      * @param amount quantity of fluid given
      * @return the current recipe
      */
-    public AbstractMultipleJsonResultRecipeBuilder addFluidResult(String fluid, int amount) {
+    public AMultipleJsonResultRecipeBuilder addFluidResult(String fluid, int amount) {
         com.google.gson.JsonObject fluidResult = new com.google.gson.JsonObject();
         fluidResult.addProperty("fluid", fluid);
         fluidResult.addProperty("amount", amount);

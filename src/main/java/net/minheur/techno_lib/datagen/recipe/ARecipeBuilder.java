@@ -13,18 +13,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-public abstract class AbstractRecipeBuilder {
+public abstract class ARecipeBuilder {
     protected final String modid;
     protected final String recipeName;
     protected final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
-    public AbstractRecipeBuilder(String modid, String recipeName) {
+    public ARecipeBuilder(String modid, String recipeName) {
         this.modid = modid;
         if (recipeName.toLowerCase().replaceAll("\\s+", "").isEmpty()) throw new IllegalArgumentException("This name isn't valid !");
         this.recipeName = recipeName;
     }
 
-    public AbstractRecipeBuilder unlocks(String key, CriterionTriggerInstance pCriterion) {
+    public ARecipeBuilder unlocks(String key, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(key, pCriterion);
         return this;
     }

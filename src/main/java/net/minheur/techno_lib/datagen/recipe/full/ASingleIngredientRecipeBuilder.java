@@ -4,12 +4,12 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.AbstractResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
-public abstract class AbstractSingleIngredientRecipeBuilder extends AbstractResultRecipeBuilder {
+public abstract class ASingleIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final Ingredient ingredient;
 
-    public AbstractSingleIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count, Ingredient ingredient) {
+    public ASingleIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count, Ingredient ingredient) {
         super(modid, recipeName, result, count);
         this.ingredient = ingredient;
     }

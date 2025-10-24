@@ -3,13 +3,13 @@ package net.minheur.techno_lib.datagen.recipe.result;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.AbstractRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 
-public abstract class AbstractResultRecipeBuilder extends AbstractRecipeBuilder {
+public abstract class AResultRecipeBuilder extends ARecipeBuilder {
     protected final ItemLike result;
     protected final int count;
 
-    public AbstractResultRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+    public AResultRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
         super(modid, recipeName);
         this.result = result;
         this.count = count;
