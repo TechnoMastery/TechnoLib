@@ -3,21 +3,14 @@ package net.minheur.techno_lib.datagen.recipe.full;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.techno_lib.datagen.recipe.result.ASingleJsonResultRecipeBuilder;
 
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
-
 public abstract class ASingleJsonRecipeBuilder extends ASingleJsonResultRecipeBuilder {
-    protected final JsonObject ingredient = new JsonObject();
+    protected final JsonObject ingredient;
 
-    public ASingleJsonRecipeBuilder(String modid, String recipeName) {
-        super(modid, recipeName);
-    }
-
-    public ASingleJsonRecipeBuilder addIngredient(ItemLike result) {
-        this.ingredient.addProperty("item", getBuiltInItemRegistry(result));
-        return this;
+    public ASingleJsonRecipeBuilder(String modid, String recipeName, JsonObject result, JsonObject ingredient) {
+        super(modid, recipeName, result);
+        this.ingredient = ingredient;
     }
 
     @Override

@@ -26,43 +26,8 @@ public abstract class AMultipleJsonResultRecipeBuilder extends ARecipeBuilder {
      * @param chance the chance of getting the result
      * @return the current recipe
      */
-    public AMultipleJsonResultRecipeBuilder addResult(ItemLike result, int count, float chance) {
-        JsonObject json = new JsonObject();
-        json.addProperty("item", getBuiltInItemRegistry(result));
-        if (count > 1) json.addProperty("count", count);
-        if ((chance > 0) && !(chance >= 1)) json.addProperty("chance", chance);
-        results.add(json);
-        return this;
-    }
-
-    /**
-     * Adding a result to your recipe
-     * @param item the result you want
-     * @param count the amount you want
-     * @return the current recipe
-     */
-    public AMultipleJsonResultRecipeBuilder addResult(ItemLike item, int count) {
-        return addResult(item, count, 1f);
-    }
-    /**
-     * Adding a result to your recipe. Count is 1
-     * @param item the result you want
-     * @return the current recipe
-     */
-    public AMultipleJsonResultRecipeBuilder addResult(ItemLike item) {
-        return this.addResult(item, 1, 1f);
-    }
-    /**
-     * Adding a fluid result
-     * @param fluid the fluis you want (ex. {@code minecraft:lava})
-     * @param amount quantity of fluid given
-     * @return the current recipe
-     */
-    public AMultipleJsonResultRecipeBuilder addFluidResult(String fluid, int amount) {
-        com.google.gson.JsonObject fluidResult = new com.google.gson.JsonObject();
-        fluidResult.addProperty("fluid", fluid);
-        fluidResult.addProperty("amount", amount);
-        results.add(fluidResult);
+    public AMultipleJsonResultRecipeBuilder addResult(JsonObject result) {
+        results.add(result);
         return this;
     }
 

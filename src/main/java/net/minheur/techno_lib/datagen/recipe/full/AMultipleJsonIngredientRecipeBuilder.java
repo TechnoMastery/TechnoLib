@@ -9,8 +9,6 @@ import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
-
 public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
@@ -18,9 +16,12 @@ public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipe
         super(modid, recipeName, result, count);
     }
 
-    public AMultipleJsonIngredientRecipeBuilder addIngredient(ItemLike itemLike) {
-        JsonObject ingredient = new JsonObject();
-        ingredient.addProperty("item", getBuiltInItemRegistry(itemLike));
+    /**
+     * Adding an ingredient to the list
+     * @param itemLike the ItemLike you want to add
+     * @return the current recipe
+     */
+    public AMultipleJsonIngredientRecipeBuilder addIngredient(JsonObject ingredient) {
         ingredients.add(ingredient);
         return this;
     }

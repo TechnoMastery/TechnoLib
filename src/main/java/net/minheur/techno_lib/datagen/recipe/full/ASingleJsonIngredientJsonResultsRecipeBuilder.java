@@ -1,20 +1,31 @@
 package net.minheur.techno_lib.datagen.recipe.full;
 
 import com.google.gson.JsonObject;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.resources.ResourceLocation;
 import net.minheur.techno_lib.datagen.recipe.result.AMultipleJsonResultRecipeBuilder;
 
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
+import java.util.List;
 
 public abstract class ASingleJsonIngredientJsonResultsRecipeBuilder extends AMultipleJsonResultRecipeBuilder {
-    protected final JsonObject ingredient = new JsonObject();
+    protected final JsonObject ingredient;
 
-    public ASingleJsonIngredientJsonResultsRecipeBuilder(String modid, String recipeName) {
+    public ASingleJsonIngredientJsonResultsRecipeBuilder(String modid, String recipeName, JsonObject ingredient) {
         super(modid, recipeName);
+        this.ingredient = ingredient;
     }
 
-    public ASingleJsonIngredientJsonResultsRecipeBuilder addIngredient(ItemLike ingredient) {
-        this.ingredient.addProperty("item", getBuiltInItemRegistry(ingredient));
-        return this;
+    @Override
+    protected boolean isRecipeEmpty() {
+        return super.isRecipeEmpty() || ingredient.isJsonNull();
+    }
+
+    public static abstract class SingleJsonIngredientResultsResult extends MultipleJsonResultRecipeResult {
+        protected final JsonObject ingredient;
+
+        protected SingleJsonIngredientResultsResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, JsonObject ingredient) {
+            super(id, advancement, advancementId, results);
+            this.ingredient = ingredient;
+        }
     }
 }
