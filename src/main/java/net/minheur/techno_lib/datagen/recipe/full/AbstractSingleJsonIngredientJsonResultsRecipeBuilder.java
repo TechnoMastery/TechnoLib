@@ -1,7 +1,8 @@
-package net.minheur.techno_lib.datagen.recipe;
+package net.minheur.techno_lib.datagen.recipe.full;
 
 import com.google.gson.JsonObject;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.techno_lib.datagen.recipe.result.AbstractMultipleJsonResultRecipeBuilder;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 

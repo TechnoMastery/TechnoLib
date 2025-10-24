@@ -1,4 +1,4 @@
-package net.minheur.techno_lib.datagen.recipe;
+package net.minheur.techno_lib.datagen.recipe.full;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.techno_lib.datagen.recipe.result.AbstractMultipleJsonResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

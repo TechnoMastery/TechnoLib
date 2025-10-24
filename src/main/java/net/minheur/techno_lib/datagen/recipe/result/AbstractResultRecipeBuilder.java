@@ -1,8 +1,9 @@
-package net.minheur.techno_lib.datagen.recipe;
+package net.minheur.techno_lib.datagen.recipe.result;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.techno_lib.datagen.recipe.AbstractRecipeBuilder;
 
 public abstract class AbstractResultRecipeBuilder extends AbstractRecipeBuilder {
     protected final ItemLike result;

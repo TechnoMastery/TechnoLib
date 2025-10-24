@@ -1,10 +1,12 @@
-package net.minheur.techno_lib.datagen.recipe;
+package net.minheur.techno_lib.datagen.recipe.result;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 
 import com.google.gson.JsonObject;
+import net.minheur.techno_lib.datagen.recipe.AbstractRecipeBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 

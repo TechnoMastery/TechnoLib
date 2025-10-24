@@ -1,9 +1,10 @@
-package net.minheur.techno_lib.datagen.recipe;
+package net.minheur.techno_lib.datagen.recipe.full;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.techno_lib.datagen.recipe.result.AbstractResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
