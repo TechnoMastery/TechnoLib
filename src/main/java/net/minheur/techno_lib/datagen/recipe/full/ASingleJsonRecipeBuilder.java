@@ -3,9 +3,9 @@ package net.minheur.techno_lib.datagen.recipe.full;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minheur.techno_lib.datagen.recipe.result.ASingleJsonResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
 
-public abstract class ASingleJsonRecipeBuilder extends ASingleJsonResultRecipeBuilder {
+public abstract class ASingleJsonRecipeBuilder extends ASingleResultRecipeBuilder {
     protected final JsonObject ingredient;
 
     public ASingleJsonRecipeBuilder(String modid, String recipeName, JsonObject result, JsonObject ingredient) {
@@ -18,7 +18,7 @@ public abstract class ASingleJsonRecipeBuilder extends ASingleJsonResultRecipeBu
         return super.isRecipeEmpty() || ingredient.isJsonNull();
     }
 
-    public static abstract class SingleJsonResult extends SingleJsonResultRecipeResult {
+    public static abstract class SingleJsonResult extends SingleResultRecipeResult {
         protected final JsonObject ingredient;
 
         protected SingleJsonResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, JsonObject result, JsonObject ingredient) {

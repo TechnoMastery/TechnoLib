@@ -3,13 +3,12 @@ package net.minheur.techno_lib.datagen.recipe.full;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipeBuilder {
+public abstract class AMultipleJsonIngredientRecipeBuilder extends ASingleResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
     public AMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {
@@ -32,11 +31,11 @@ public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipe
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleJsonIngredientResult extends ResultRecipeResult {
+    public static abstract class MultipleJsonIngredientResult extends SingleResultRecipeResult {
         protected final List<JsonObject> ingredients;
 
         protected MultipleJsonIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> ingredients) {
-            super(id, result, advancement, advancementId);
+            super(id, advancement, advancementId, result);
             this.ingredients = ingredients;
         }
     }

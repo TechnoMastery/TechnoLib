@@ -5,12 +5,12 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuilder {
+public abstract class AMultipleIngredientRecipeBuilder extends ASingleResultRecipeBuilder {
     protected final List<Ingredient> ingredients = new ArrayList<>();
 
     public AMultipleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {
@@ -29,11 +29,11 @@ public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuil
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleIngredientResult extends ResultRecipeResult {
+    public static abstract class MultipleIngredientResult extends SingleResultRecipeResult {
         protected final List<Ingredient> ingredients;
 
         protected MultipleIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<Ingredient> ingredients) {
-            super(id, result, advancement, advancementId);
+            super(id, advancement, advancementId, result);
             this.ingredients = ingredients;
         }
     }

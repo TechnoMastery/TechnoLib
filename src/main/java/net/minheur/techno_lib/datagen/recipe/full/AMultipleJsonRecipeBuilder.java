@@ -4,12 +4,12 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minheur.techno_lib.builders.RecipeJsonObjectBuilder;
-import net.minheur.techno_lib.datagen.recipe.result.AMultipleJsonResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AMultipleResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleJsonRecipeBuilder extends AMultipleJsonResultRecipeBuilder {
+public abstract class AMultipleJsonRecipeBuilder extends AMultipleResultRecipeBuilder {
     /**
      * The List of ingredient items
      */
@@ -35,7 +35,7 @@ public abstract class AMultipleJsonRecipeBuilder extends AMultipleJsonResultReci
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleJsonResult extends MultipleJsonResultRecipeResult {
+    public static abstract class MultipleJsonResult extends MultipleResultRecipeResult {
         /**
          * The recipe ingredients list
          */

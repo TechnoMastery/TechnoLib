@@ -2,7 +2,6 @@ package net.minheur.techno_lib.datagen.recipe.result;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
 
 import com.google.gson.JsonObject;
 import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
@@ -10,12 +9,10 @@ import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
-
-public abstract class AMultipleJsonResultRecipeBuilder extends ARecipeBuilder {
+public abstract class AMultipleResultRecipeBuilder extends ARecipeBuilder {
     protected final List<JsonObject> results = new ArrayList<>();
 
-    public AMultipleJsonResultRecipeBuilder(String modid, String recipeName) {
+    public AMultipleResultRecipeBuilder(String modid, String recipeName) {
         super(modid, recipeName);
     }
 
@@ -26,7 +23,7 @@ public abstract class AMultipleJsonResultRecipeBuilder extends ARecipeBuilder {
      * @param chance the chance of getting the result
      * @return the current recipe
      */
-    public AMultipleJsonResultRecipeBuilder addResult(JsonObject result) {
+    public AMultipleResultRecipeBuilder addResult(JsonObject result) {
         results.add(result);
         return this;
     }
@@ -37,13 +34,13 @@ public abstract class AMultipleJsonResultRecipeBuilder extends ARecipeBuilder {
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleJsonResultRecipeResult extends BaseResult {
+    public static abstract class MultipleResultRecipeResult extends BaseResult {
         /**
          * The recipe results list
          */
         protected final List<JsonObject> results;
 
-        protected MultipleJsonResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results) {
+        protected MultipleResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results) {
             super(id, advancement, advancementId);
             this.results = results;
         }
