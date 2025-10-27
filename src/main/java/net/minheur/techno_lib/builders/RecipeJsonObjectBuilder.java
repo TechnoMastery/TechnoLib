@@ -14,7 +14,7 @@ public class RecipeJsonObjectBuilder {
         this.object = new JsonObject();
     }
 
-    public RecipeJsonObjectBuilder json() {
+    public static RecipeJsonObjectBuilder json() {
         return new RecipeJsonObjectBuilder();
     }
 
