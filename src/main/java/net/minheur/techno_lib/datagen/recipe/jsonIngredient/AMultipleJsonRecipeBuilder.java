@@ -1,4 +1,4 @@
-package net.minheur.techno_lib.datagen.recipe.full;
+package net.minheur.techno_lib.datagen.recipe.jsonIngredient;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
