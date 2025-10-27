@@ -12,8 +12,8 @@ import java.util.List;
 public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
-    public AMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
-        super(modid, recipeName, result, count);
+    public AMultipleJsonIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {
+        super(modid, recipeName, result);
     }
 
     /**
@@ -35,8 +35,8 @@ public abstract class AMultipleJsonIngredientRecipeBuilder extends AResultRecipe
     public static abstract class MultipleJsonIngredientResult extends ResultRecipeResult {
         protected final List<JsonObject> ingredients;
 
-        protected MultipleJsonIngredientResult(ResourceLocation id, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> ingredients) {
-            super(id, result, count, advancement, advancementId);
+        protected MultipleJsonIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> ingredients) {
+            super(id, result, advancement, advancementId);
             this.ingredients = ingredients;
         }
     }

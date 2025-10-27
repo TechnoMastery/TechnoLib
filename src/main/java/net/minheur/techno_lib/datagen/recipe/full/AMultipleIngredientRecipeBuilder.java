@@ -1,5 +1,6 @@
 package net.minheur.techno_lib.datagen.recipe.full;
 
+import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -12,8 +13,8 @@ import java.util.List;
 public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final List<Ingredient> ingredients = new ArrayList<>();
 
-    public AMultipleIngredientRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
-        super(modid, recipeName, result, count);
+    public AMultipleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {
+        super(modid, recipeName, result);
     }
 
     public AMultipleIngredientRecipeBuilder addIngredient(ItemLike itemLike) {
@@ -31,8 +32,8 @@ public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuil
     public static abstract class MultipleIngredientResult extends ResultRecipeResult {
         protected final List<Ingredient> ingredients;
 
-        protected MultipleIngredientResult(ResourceLocation id, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId, List<Ingredient> ingredients) {
-            super(id, result, count, advancement, advancementId);
+        protected MultipleIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<Ingredient> ingredients) {
+            super(id, result, advancement, advancementId);
             this.ingredients = ingredients;
         }
     }

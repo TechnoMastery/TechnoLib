@@ -1,34 +1,30 @@
 package net.minheur.techno_lib.datagen.recipe.result;
 
+import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 
 public abstract class AResultRecipeBuilder extends ARecipeBuilder {
-    protected final ItemLike result;
-    protected final int count;
+    protected final JsonObject result;
 
-    public AResultRecipeBuilder(String modid, String recipeName, ItemLike result, int count) {
+    public AResultRecipeBuilder(String modid, String recipeName, JsonObject result) {
         super(modid, recipeName);
         this.result = result;
-        this.count = count;
     }
 
     @Override
     protected boolean isRecipeEmpty() {
         return super.isRecipeEmpty() ||
-                result == null || count <= 0;
+                result.isJsonNull();
     }
 
     public static abstract class ResultRecipeResult extends BaseResult {
-        protected final ItemLike result;
-        protected final int count;
+        protected final JsonObject result;
 
-        protected ResultRecipeResult(ResourceLocation id, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId) {
+        protected ResultRecipeResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
             super(id, advancement, advancementId);
             this.result = result;
-            this.count = count;
         }
     }
 }
