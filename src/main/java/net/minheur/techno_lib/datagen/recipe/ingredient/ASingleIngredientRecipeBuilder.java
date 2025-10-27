@@ -4,9 +4,9 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
-public abstract class ASingleIngredientRecipeBuilder extends ASingleResultRecipeBuilder {
+public abstract class ASingleIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final Ingredient ingredient;
 
     public ASingleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result, Ingredient ingredient) {

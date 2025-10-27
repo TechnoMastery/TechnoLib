@@ -3,9 +3,9 @@ package net.minheur.techno_lib.datagen.recipe.jsonIngredient;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
-public abstract class AJsonIngredientResultRecipeBuilder extends ASingleResultRecipeBuilder {
+public abstract class AJsonIngredientResultRecipeBuilder extends AResultRecipeBuilder {
     protected final JsonObject ingredient;
 
     public AJsonIngredientResultRecipeBuilder(String modid, String recipeName, JsonObject result, JsonObject ingredient) {

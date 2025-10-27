@@ -5,12 +5,12 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleIngredientRecipeBuilder extends ASingleResultRecipeBuilder {
+public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuilder {
     protected final List<Ingredient> ingredients = new ArrayList<>();
 
     public AMultipleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {

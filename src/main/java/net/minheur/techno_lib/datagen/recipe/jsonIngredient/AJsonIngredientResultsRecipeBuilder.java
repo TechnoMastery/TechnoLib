@@ -3,11 +3,11 @@ package net.minheur.techno_lib.datagen.recipe.jsonIngredient;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
-import net.minheur.techno_lib.datagen.recipe.result.AMultipleResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultsRecipeBuilder;
 
 import java.util.List;
 
-public abstract class AJsonIngredientResultsRecipeBuilder extends AMultipleResultRecipeBuilder {
+public abstract class AJsonIngredientResultsRecipeBuilder extends AResultsRecipeBuilder {
     protected final JsonObject ingredient;
 
     public AJsonIngredientResultsRecipeBuilder(String modid, String recipeName, JsonObject ingredient) {

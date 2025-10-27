@@ -10,10 +10,10 @@ import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleResultRecipeBuilder extends ARecipeBuilder {
+public abstract class AResultsRecipeBuilder extends ARecipeBuilder {
     protected final List<JsonObject> results = new ArrayList<>();
 
-    public AMultipleResultRecipeBuilder(String modid, String recipeName) {
+    public AResultsRecipeBuilder(String modid, String recipeName) {
         super(modid, recipeName);
     }
 
@@ -22,7 +22,7 @@ public abstract class AMultipleResultRecipeBuilder extends ARecipeBuilder {
      * @param result the result item. Use {@link RecipeJsonObjectBuilder} to build.
      * @return the current recipe
      */
-    public AMultipleResultRecipeBuilder addResult(JsonObject result) {
+    public AResultsRecipeBuilder addResult(JsonObject result) {
         results.add(result);
         return this;
     }

@@ -4,12 +4,12 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minheur.techno_lib.builders.RecipeJsonObjectBuilder;
-import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AJsonIngredientsResultRecipeBuilder extends ASingleResultRecipeBuilder {
+public abstract class AJsonIngredientsResultRecipeBuilder extends AResultRecipeBuilder {
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
     public AJsonIngredientsResultRecipeBuilder(String modid, String recipeName, JsonObject result) {
