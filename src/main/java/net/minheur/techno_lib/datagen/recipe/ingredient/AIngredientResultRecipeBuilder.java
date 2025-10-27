@@ -25,10 +25,10 @@ public abstract class AIngredientResultRecipeBuilder extends AResultRecipeBuilde
                 ingredient.isEmpty();
     }
 
-    public static abstract class SingleIngredientResult extends SingleResultRecipeResult {
+    public static abstract class IngredientResult extends ResultRecipeResult {
         protected final Ingredient ingredient;
 
-        protected SingleIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, Ingredient ingredient) {
+        protected IngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, Ingredient ingredient) {
             super(id, advancement, advancementId, result);
             this.ingredient = ingredient;
         }

@@ -20,10 +20,10 @@ public abstract class AJsonIngredientResultsRecipeBuilder extends AResultsRecipe
         return super.isRecipeEmpty() || ingredient.isJsonNull();
     }
 
-    public static abstract class SingleJsonIngredientResultsResult extends MultipleResultRecipeResult {
+    public static abstract class IngredientResult extends ResultRecipeResult {
         protected final JsonObject ingredient;
 
-        protected SingleJsonIngredientResultsResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, JsonObject ingredient) {
+        protected IngredientResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, JsonObject ingredient) {
             super(id, advancement, advancementId, results);
             this.ingredient = ingredient;
         }

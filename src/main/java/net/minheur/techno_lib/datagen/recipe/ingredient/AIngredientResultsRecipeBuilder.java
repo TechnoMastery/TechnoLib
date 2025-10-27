@@ -26,7 +26,7 @@ public abstract class AIngredientResultsRecipeBuilder extends AResultsRecipeBuil
         return super.isRecipeEmpty() || ingredient.isEmpty();
     }
 
-    public static abstract class IngredientResult extends MultipleResultRecipeResult {
+    public static abstract class IngredientResult extends ResultRecipeResult {
         protected final Ingredient ingredient;
 
         protected IngredientResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, Ingredient ingredient) {

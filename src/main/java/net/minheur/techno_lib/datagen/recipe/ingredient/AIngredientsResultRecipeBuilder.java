@@ -32,10 +32,10 @@ public abstract class AIngredientsResultRecipeBuilder extends AResultRecipeBuild
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleIngredientResult extends SingleResultRecipeResult {
+    public static abstract class IngredientResult extends ResultRecipeResult {
         protected final List<Ingredient> ingredients;
 
-        protected MultipleIngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<Ingredient> ingredients) {
+        protected IngredientResult(ResourceLocation id, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId, List<Ingredient> ingredients) {
             super(id, advancement, advancementId, result);
             this.ingredients = ingredients;
         }

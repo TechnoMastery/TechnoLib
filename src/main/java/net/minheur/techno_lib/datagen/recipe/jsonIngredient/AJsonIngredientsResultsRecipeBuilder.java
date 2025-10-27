@@ -35,13 +35,13 @@ public abstract class AJsonIngredientsResultsRecipeBuilder extends AResultsRecip
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleJsonResult extends MultipleResultRecipeResult {
+    public static abstract class IngredientResult extends ResultRecipeResult {
         /**
          * The recipe ingredients list
          */
         protected final List<JsonObject> ingredients;
 
-        protected MultipleJsonResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, List<JsonObject> ingredients) {
+        protected IngredientResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results, List<JsonObject> ingredients) {
             super(id, advancement, advancementId, results);
             this.ingredients = ingredients;
         }

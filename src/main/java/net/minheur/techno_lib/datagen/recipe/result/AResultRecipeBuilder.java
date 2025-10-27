@@ -18,10 +18,10 @@ public abstract class AResultRecipeBuilder extends ARecipeBuilder {
         return super.isRecipeEmpty() || result.isJsonNull();
     }
 
-    public static abstract class SingleResultRecipeResult extends BaseResult {
+    public static abstract class ResultRecipeResult extends BaseResult {
         protected final JsonObject result;
 
-        protected SingleResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, JsonObject result) {
+        protected ResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, JsonObject result) {
             super(id, advancement, advancementId);
             this.result = result;
         }

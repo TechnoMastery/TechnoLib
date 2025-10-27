@@ -33,13 +33,13 @@ public abstract class AResultsRecipeBuilder extends ARecipeBuilder {
         return super.isRecipeEmpty();
     }
 
-    public static abstract class MultipleResultRecipeResult extends BaseResult {
+    public static abstract class ResultRecipeResult extends BaseResult {
         /**
          * The recipe results list
          */
         protected final List<JsonObject> results;
 
-        protected MultipleResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results) {
+        protected ResultRecipeResult(ResourceLocation id, Advancement.Builder advancement, ResourceLocation advancementId, List<JsonObject> results) {
             super(id, advancement, advancementId);
             this.results = results;
         }
