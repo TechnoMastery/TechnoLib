@@ -4,6 +4,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 
 import com.google.gson.JsonObject;
+import net.minheur.techno_lib.builders.RecipeJsonObjectBuilder;
 import net.minheur.techno_lib.datagen.recipe.ARecipeBuilder;
 
 import java.util.ArrayList;
@@ -18,9 +19,7 @@ public abstract class AMultipleResultRecipeBuilder extends ARecipeBuilder {
 
     /**
      * Adding a result to your recipe.
-     * @param result the result item
-     * @param count the amount of result
-     * @param chance the chance of getting the result
+     * @param result the result item. Use {@link RecipeJsonObjectBuilder} to build.
      * @return the current recipe
      */
     public AMultipleResultRecipeBuilder addResult(JsonObject result) {

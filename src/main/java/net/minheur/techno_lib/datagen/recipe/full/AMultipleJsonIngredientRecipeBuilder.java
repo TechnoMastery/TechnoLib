@@ -3,6 +3,7 @@ package net.minheur.techno_lib.datagen.recipe.full;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
+import net.minheur.techno_lib.builders.RecipeJsonObjectBuilder;
 import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public abstract class AMultipleJsonIngredientRecipeBuilder extends ASingleResult
 
     /**
      * Adding an ingredient to the list
-     * @param itemLike the ItemLike you want to add
+     * @param ingredient the ingredient you want to add. Use {@link RecipeJsonObjectBuilder} to build.
      * @return the current recipe
      */
     public AMultipleJsonIngredientRecipeBuilder addIngredient(JsonObject ingredient) {
