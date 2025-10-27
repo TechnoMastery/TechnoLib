@@ -14,6 +14,10 @@ public class RecipeJsonObjectBuilder {
         this.object = new JsonObject();
     }
 
+    public RecipeJsonObjectBuilder json() {
+        return new RecipeJsonObjectBuilder();
+    }
+
     public RecipeJsonObjectBuilder addItem(ItemLike item) {
         object.addProperty("item", getBuiltInItemRegistry(item));
         return this;
