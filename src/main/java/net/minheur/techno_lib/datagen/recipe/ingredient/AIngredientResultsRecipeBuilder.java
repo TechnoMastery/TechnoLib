@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minheur.techno_lib.datagen.recipe.result.AResultsRecipeBuilder;
 
 import java.util.List;
@@ -14,6 +15,10 @@ public abstract class AIngredientResultsRecipeBuilder extends AResultsRecipeBuil
     public AIngredientResultsRecipeBuilder(String modid, String recipeName, Ingredient ingredient) {
         super(modid, recipeName);
         this.ingredient = ingredient;
+    }
+    public AIngredientResultsRecipeBuilder(String modid, String recipeName, ItemLike ingredient) {
+        super(modid, recipeName);
+        this.ingredient = Ingredient.of(ingredient);
     }
 
     @Override

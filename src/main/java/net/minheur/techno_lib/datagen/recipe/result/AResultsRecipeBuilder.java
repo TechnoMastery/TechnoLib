@@ -29,7 +29,7 @@ public abstract class AResultsRecipeBuilder extends ARecipeBuilder {
 
     @Override
     protected boolean isRecipeEmpty() {
-        for (JsonObject object : results) if (object == null) return true;
+        for (JsonObject object : results) if (object.isJsonNull()) return true;
         return super.isRecipeEmpty();
     }
 

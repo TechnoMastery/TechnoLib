@@ -17,9 +17,12 @@ public abstract class AIngredientsResultRecipeBuilder extends AResultRecipeBuild
         super(modid, recipeName, result);
     }
 
-    public AIngredientsResultRecipeBuilder addIngredient(ItemLike itemLike) {
-        Ingredient ingredient = Ingredient.of(itemLike);
+    public AIngredientsResultRecipeBuilder addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
+        return this;
+    }
+    public AIngredientsResultRecipeBuilder addIngredient(ItemLike ingredient) {
+        ingredients.add(Ingredient.of(ingredient));
         return this;
     }
 
