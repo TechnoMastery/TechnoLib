@@ -5,10 +5,10 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.resources.ResourceLocation;
 import net.minheur.techno_lib.datagen.recipe.result.ASingleResultRecipeBuilder;
 
-public abstract class ASingleJsonRecipeBuilder extends ASingleResultRecipeBuilder {
+public abstract class AJsonIngredientResultRecipeBuilder extends ASingleResultRecipeBuilder {
     protected final JsonObject ingredient;
 
-    public ASingleJsonRecipeBuilder(String modid, String recipeName, JsonObject result, JsonObject ingredient) {
+    public AJsonIngredientResultRecipeBuilder(String modid, String recipeName, JsonObject result, JsonObject ingredient) {
         super(modid, recipeName, result);
         this.ingredient = ingredient;
     }

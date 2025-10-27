@@ -7,10 +7,10 @@ import net.minheur.techno_lib.datagen.recipe.result.AMultipleResultRecipeBuilder
 
 import java.util.List;
 
-public abstract class ASingleJsonIngredientJsonResultsRecipeBuilder extends AMultipleResultRecipeBuilder {
+public abstract class AJsonIngredientResultsRecipeBuilder extends AMultipleResultRecipeBuilder {
     protected final JsonObject ingredient;
 
-    public ASingleJsonIngredientJsonResultsRecipeBuilder(String modid, String recipeName, JsonObject ingredient) {
+    public AJsonIngredientResultsRecipeBuilder(String modid, String recipeName, JsonObject ingredient) {
         super(modid, recipeName);
         this.ingredient = ingredient;
     }

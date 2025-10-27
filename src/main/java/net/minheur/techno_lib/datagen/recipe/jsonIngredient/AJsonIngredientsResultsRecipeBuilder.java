@@ -9,13 +9,13 @@ import net.minheur.techno_lib.datagen.recipe.result.AMultipleResultRecipeBuilder
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleJsonRecipeBuilder extends AMultipleResultRecipeBuilder {
+public abstract class AJsonIngredientsResultsRecipeBuilder extends AMultipleResultRecipeBuilder {
     /**
      * The List of ingredient items
      */
     protected final List<JsonObject> ingredients = new ArrayList<>();
 
-    public AMultipleJsonRecipeBuilder(String modid, String recipeName) {
+    public AJsonIngredientsResultsRecipeBuilder(String modid, String recipeName) {
         super(modid, recipeName);
     }
 
@@ -24,7 +24,7 @@ public abstract class AMultipleJsonRecipeBuilder extends AMultipleResultRecipeBu
      * @param ingredient the json you want to add. Use {@link RecipeJsonObjectBuilder} to build.
      * @return the current recipe
      */
-    public AMultipleJsonRecipeBuilder addIngredient(JsonObject ingredient) {
+    public AJsonIngredientsResultsRecipeBuilder addIngredient(JsonObject ingredient) {
         ingredients.add(ingredient);
         return this;
     }
