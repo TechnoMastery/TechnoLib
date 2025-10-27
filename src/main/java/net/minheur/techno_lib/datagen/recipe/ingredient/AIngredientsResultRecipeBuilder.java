@@ -10,14 +10,14 @@ import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AMultipleIngredientRecipeBuilder extends AResultRecipeBuilder {
+public abstract class AIngredientsResultRecipeBuilder extends AResultRecipeBuilder {
     protected final List<Ingredient> ingredients = new ArrayList<>();
 
-    public AMultipleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result) {
+    public AIngredientsResultRecipeBuilder(String modid, String recipeName, JsonObject result) {
         super(modid, recipeName, result);
     }
 
-    public AMultipleIngredientRecipeBuilder addIngredient(ItemLike itemLike) {
+    public AIngredientsResultRecipeBuilder addIngredient(ItemLike itemLike) {
         Ingredient ingredient = Ingredient.of(itemLike);
         ingredients.add(ingredient);
         return this;

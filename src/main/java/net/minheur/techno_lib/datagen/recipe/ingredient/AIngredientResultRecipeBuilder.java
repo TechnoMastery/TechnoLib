@@ -6,10 +6,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
-public abstract class ASingleIngredientRecipeBuilder extends AResultRecipeBuilder {
+public abstract class AIngredientResultRecipeBuilder extends AResultRecipeBuilder {
     protected final Ingredient ingredient;
 
-    public ASingleIngredientRecipeBuilder(String modid, String recipeName, JsonObject result, Ingredient ingredient) {
+    public AIngredientResultRecipeBuilder(String modid, String recipeName, JsonObject result, Ingredient ingredient) {
         super(modid, recipeName, result);
         this.ingredient = ingredient;
     }
