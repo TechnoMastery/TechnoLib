@@ -27,6 +27,23 @@ public class JsonBuilder {
         object.addProperty("amount", amount);
         return this;
     }
+
+    /**
+     * This uses Create's potion system, so it will NOT work other ways.
+     * @param potionName formated as {@code namespace:potion}
+     * @param amount of the potion
+     * @return the current builder
+     */
+    public JsonBuilder addPotion(String potionName, int amount) {
+        JsonObject nbt = new JsonObject();
+        nbt.addProperty("Bottle", "REGULAR");
+        nbt.addProperty("Potion", potionName);
+
+        object.addProperty("fluid", "create:potion");
+        object.addProperty("amount", amount);
+        object.add("nbt", nbt);
+        return this;
+    }
     public JsonBuilder addTag(TagKey<Item> tag) {
         object.addProperty("tag", tag.location().toString());
         return this;
