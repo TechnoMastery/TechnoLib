@@ -11,8 +11,4 @@ public interface ICreateSequenceRecipe {
       default JsonObject getSequencedRecipe() {
           return getFinishedRecipe().serializeRecipe();
       }
-
-      default JsonObject getTransitional(ItemLike transitionalItem) {
-          return JsonBuilder.json().addItem(transitionalItem).build();
-      }
 }
