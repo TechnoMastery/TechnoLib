@@ -4,9 +4,9 @@ import com.google.gson.JsonObject;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 public interface ICreateSequenceRecipe {
-      FinishedRecipe getFinishedRecipe();
+    FinishedRecipe getFinishedRecipe();
 
-      default JsonObject getSequencedRecipe() {
+    default JsonObject getSequencedRecipe() {
           return getFinishedRecipe().serializeRecipe();
       }
 }
