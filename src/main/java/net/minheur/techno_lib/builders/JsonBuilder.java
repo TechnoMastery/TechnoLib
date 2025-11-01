@@ -58,6 +58,11 @@ public class JsonBuilder {
         return this;
     }
 
+    public JsonBuilder addRecipeNBT(RecipeNbtBuilder nbt) {
+        object.add("nbt", nbt.getPropertiesJson());
+        return this;
+    }
+
     public JsonObject build() {
         return object;
     }
