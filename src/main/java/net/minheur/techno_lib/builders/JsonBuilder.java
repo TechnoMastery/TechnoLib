@@ -67,7 +67,7 @@ public class JsonBuilder {
         return object;
     }
 
-    public JsonObject getSimpleItem(ItemLike item) {
+    public static JsonObject getSimpleItem(ItemLike item) {
         return JsonBuilder.json().addItem(item).build();
     }
 }
