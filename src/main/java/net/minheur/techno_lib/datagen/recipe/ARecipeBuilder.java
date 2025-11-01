@@ -5,10 +5,12 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.advancements.critereon.*;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -27,6 +29,11 @@ public abstract class ARecipeBuilder {
     public ARecipeBuilder unlocks(String key, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(key, pCriterion);
         return this;
+    }
+    public ARecipeBuilder unlocks(ItemLike criterionItem) {
+        return unlocks("has_" + BuiltInRegistries.ITEM.getKey(criterionItem.asItem()).getPath(),
+                new InventoryChangeTrigger.TriggerInstance(ContextAwarePredicate.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY,
+                        new ItemPredicate[]{ItemPredicate.Builder.item().of(criterionItem).build()}));
     }
 
     private void ensureValid(ResourceLocation pId) {
